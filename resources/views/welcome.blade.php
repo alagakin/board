@@ -6,9 +6,8 @@
 
         <title>Board</title>
         @vite(['resources/js/app.js', 'resources/css/app.css'])
-
     </head>
-    <body>
-        <div id="app"></div>
+    <body class="bg-neutral-100">
+       <div id="app"></div>
     </body>
 </html>

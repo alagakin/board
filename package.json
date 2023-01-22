@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "dev": "vite --host 172.29.0.2",
+        "dev": "vite --host 172.29.0.3",
         "build": "vite build"
     },
     "devDependencies": {
@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^4.0.0",
+        "flowbite": "^1.6.2",
         "vue": "^3.2.36"
     }
 }
