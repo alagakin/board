@@ -1,12 +1,4 @@
 <template>
-    <header class="bg-white">
-        <div class="flex flex-row justify-between max-w-5xl mx-auto">
-            <div class="font-medium text-2xl p-3">
-                Board
-            </div>
-            <SignIn />
-        </div>
-    </header>
     <main class="max-w-4xl mx-auto">
         <div class="container mt-3 max-w-5xl">
             <form action="" class="w-full rounded-lg">
@@ -103,11 +95,7 @@
 </template>
 
 <script>
-import SignIn from "./Auth/SignIn.vue";
-
 export default {
-    name: "Home",
-    components: {SignIn},
-
+    name: "Board"
 }
 </script>

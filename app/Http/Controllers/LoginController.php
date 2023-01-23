@@ -28,5 +28,17 @@ class LoginController extends Controller
 
         return false;
     }
+
+    public function get(Request $request)
+    {
+        return $request->user();
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+    }
 }
 

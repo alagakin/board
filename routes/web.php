@@ -18,3 +18,11 @@ Route::get('/', function () {
 });
 
 Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authenticate']);
+
+Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout']);
+
+Route::get('/get-user', [\App\Http\Controllers\LoginController::class, 'get']);
+
+Route::get('/{any}', function () {
+    return view('welcome');
+})->where("any",".*");
