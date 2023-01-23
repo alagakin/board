@@ -2,10 +2,12 @@
     <header class="bg-white">
         <div class="flex flex-row justify-between max-w-5xl mx-auto">
             <div class="font-medium text-2xl p-3">
-                Board
+                <router-link to="/">
+                    Board
+                </router-link>
             </div>
             <SignIn v-if="!user"/>
-            <div v-else class="font-medium text-md p-3"><a href="">Home</a></div>
+            <div v-else class="font-medium text-md p-3"><router-link to="/user">Home</router-link></div>
         </div>
     </header>
 </template>
