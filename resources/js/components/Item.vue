@@ -4,7 +4,8 @@
             <div>
                 <div class="mb-4 flex">
                     <a href="">
-                        <img src="https://via.placeholder.com/50x50" class="rounded-full ml-2 mr-2 mw-50px" alt="">
+                        <img src="https://via.placeholder.com/50x50"
+                             class="rounded-full ml-2 mr-2 mw-50px" alt="">
                     </a>
                     <div class="flex flex-col ">
                         <a href="">
@@ -13,10 +14,19 @@
                         <span class="text-slate-400">day ago</span>
                     </div>
                 </div>
-                <a href="#">
-                    <img src="https://via.placeholder.com/350x250" class="rounded-md" alt="">
-                </a>
-                <div class="text-xl">Product</div>
+                <router-link :to="{
+                     name: 'detail_item',
+                     params: {id: 54},
+                }">
+                    <img src="https://via.placeholder.com/350x250"
+                         class="rounded-md" alt="">
+                </router-link>
+                <router-link :to="{
+                     name: 'detail_item',
+                     params: {id: 54},
+                }">
+                    <div class="text-xl">Product</div>
+                </router-link>
             </div>
         </div>
     </div>

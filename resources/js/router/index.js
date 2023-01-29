@@ -15,9 +15,10 @@ const routes = [
         component: User
     },
     {
-        path: '/items/:id',
+        path: '/items/:id/',
         name: 'detail_item',
-        component: DetailItem
+        component: DetailItem,
+        props: true
     }
 ]
 
