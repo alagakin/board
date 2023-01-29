@@ -3,14 +3,20 @@
         <div class="flex justify-center">
             <div>
                 <div class="mb-4 flex">
-                    <a href="">
+                    <router-link :to="{
+                        name: 'detail_user',
+                        params: {id: 23}
+                    }">
                         <img src="https://via.placeholder.com/50x50"
                              class="rounded-full ml-2 mr-2 mw-50px" alt="">
-                    </a>
+                    </router-link>
                     <div class="flex flex-col ">
-                        <a href="">
+                        <router-link :to="{
+                            name: 'detail_user',
+                            params: {id: 23}
+                        }">
                             <span>Valeria Novodvorskaya</span>
-                        </a>
+                        </router-link>
                         <span class="text-slate-400">day ago</span>
                     </div>
                 </div>
