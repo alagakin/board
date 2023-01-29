@@ -1,6 +1,10 @@
 <template>
-    <Header :user="user" />
-    <router-view />
+    <Header :user="user"/>
+    <main class="max-w-4xl mx-auto">
+        <div class="container mt-3 max-w-5xl">
+            <router-view/>
+        </div>
+    </main>
 </template>
 
 <script>

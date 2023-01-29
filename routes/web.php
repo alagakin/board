@@ -23,6 +23,9 @@ Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout']);
 
 Route::get('/get-user', [\App\Http\Controllers\LoginController::class, 'get']);
 
+Route::post('/update-user', [\App\Http\Controllers\LoginController::class, 'update']);
+
+
 Route::get('/{any}', function () {
     return view('welcome');
 })->where("any",".*");

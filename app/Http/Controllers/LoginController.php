@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class LoginController extends Controller
 {
@@ -40,5 +42,33 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
     }
-}
 
+    public function update(Request $request)
+    {
+        if (!$request->password) {
+            $validatorFields = [
+                'email' => ['required', 'email'],
+                'name' => ['required', 'min:3', 'max:15']
+            ];
+        } else {
+            $validatorFields = [
+                'email' => ['required', 'email'],
+                'name' => ['required', 'min:3', 'max:15'],
+                'password' => ['required', Password::min(8)],
+                'password_confirm' => ['required', 'same:password']
+            ];
+        }
+        $validator = Validator::make($request->all(), $validatorFields);
+        if ($validator->invalid()) {
+            return [
+                'errors' => $validator->errors()->toArray(),
+                'error' => true
+            ];
+        } else {
+            $request->user()->update($request->all());
+            return true;
+        }
+
+
+    }
+}
