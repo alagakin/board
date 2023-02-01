@@ -23,6 +23,8 @@ Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout']);
 
 Route::get('/get-user', [\App\Http\Controllers\LoginController::class, 'get']);
 
+Route::get('/get-avatar', [\App\Http\Controllers\LoginController::class, 'getAvatar']);
+
 Route::post('/update-user', [\App\Http\Controllers\LoginController::class, 'update']);
 
 

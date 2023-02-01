@@ -9,7 +9,8 @@
             <label class="flex justify-center mb-6 cursor-pointer"
                    for="update-profile-picture">
                 <img :src="picture"
-                     class="rounded-full ml-2 mr-2 mw-50px max-w-2xl" id="picture" alt="">
+                     class="rounded-full ml-2 mr-2 mw-50px max-w-2xl"
+                     id="picture" alt="">
             </label>
             <input class="hidden" v-on:change="uploadPicture" type="file"
                    id="update-profile-picture">
@@ -138,10 +139,10 @@
     </div>
 </template>
 <style>
-    #picture {
-        width: 120px;
-        height: 120px;
-    }
+#picture {
+    width: 120px;
+    height: 120px;
+}
 </style>
 <script>
 import axios from "axios";
@@ -156,8 +157,8 @@ export default {
                 email: '',
                 password: '',
                 password_confirm: '',
-                picture: ''
             },
+            picture: {},
             errors: {},
             successModal: {}
         }
@@ -165,6 +166,10 @@ export default {
     mounted() {
         this.getUser()
         this.successModal = new Modal(document.querySelector('#success-modal'))
+
+        axios.get('/get-avatar').then((response) => {
+            this.picture.url = response.data
+        })
     },
     methods: {
         getUser() {
@@ -175,7 +180,7 @@ export default {
             })
         },
         update() {
-            axios.post('/update-user', this.user).then(response => {
+            axios.post('/update-user', this.formData).then(response => {
                 if (response.data.errors) {
                     this.errors = response.data.errors
                 } else if (response.data == true) {
@@ -186,16 +191,26 @@ export default {
         uploadPicture(event) {
             Array.prototype.forEach.call(event.target.files, (file) => {
                 file.url = URL.createObjectURL(file)
-                this.user.picture = file;
+                this.picture = file;
             })
         }
     },
     computed: {
         picture() {
-            if (this.user.picture.url) {
-                return this.user.picture.url
+            if (this.picture?.url) {
+                return this.picture?.url
             }
             return 'https://via.placeholder.com/120x120';
+        },
+        formData() {
+            let formData = new FormData();
+            formData.set('avatar', this.picture)
+            formData.set('name', this.user.name)
+            formData.set('email', this.user.email)
+            formData.set('password', this.user.password)
+            formData.set('password_confirm', this.user.password_confirm)
+
+            return formData;
         }
     }
 }

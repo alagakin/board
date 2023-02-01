@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 
@@ -36,6 +37,11 @@ class LoginController extends Controller
         return $request->user();
     }
 
+    public function getAvatar(Request $request)
+    {
+        return Storage::url('avatars/1.png');
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();
@@ -45,6 +51,7 @@ class LoginController extends Controller
 
     public function update(Request $request)
     {
+
         if (!$request->password) {
             $validatorFields = [
                 'email' => ['required', 'email'],
@@ -65,6 +72,9 @@ class LoginController extends Controller
                 'error' => true
             ];
         } else {
+            Storage::putFileAs(
+                'public/avatars', $request->file('avatar'), $request->user()->id . '.' . $request->file('avatar')->extension()
+            );
             $request->user()->update($request->all());
             return true;
         }
