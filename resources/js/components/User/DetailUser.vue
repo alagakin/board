@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Item from "./Item.vue";
+import Item from "../Board/Item.vue";
 export default {
     name: "DetailUser",
     components: {Item}

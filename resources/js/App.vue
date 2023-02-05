@@ -9,12 +9,12 @@
 
 <script>
 import axios from "axios";
-import Header from "./components/Header.vue";
-import Board from "./components/Board.vue";
+import Header from "./components/Share/Header.vue";
+import Index from "./components/Index.vue";
 
 export default {
     name: "Home",
-    components: {Header, Board},
+    components: {Header, Index},
     data() {
         return {
             user: null
