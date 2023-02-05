@@ -1,6 +1,6 @@
 <template>
     <header class="bg-white">
-        <div class="flex flex-row justify-between max-w-5xl mx-auto">
+        <div class="flex flex-row justify-between max-w-5xl mx-auto overflow-scroll">
             <div class="font-medium text-2xl p-3">
                 <router-link to="/">
                     Board
