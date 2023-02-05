@@ -1,6 +1,6 @@
 <template>
     <div class="container bg-white pt-2 pb-12">
-        <div class="mb-4 border-b border-gray-200 dark:border-gray-700 w-2/3 m-auto">
+        <div class="mb-4  border-gray-200 dark:border-gray-700 w-2/3 m-auto">
             <ul class="flex flex-wrap -mb-px text-sm font-medium text-center justify-center"
                 ref="tabs" data-tabs-toggle="#myTabContent" role="tablist">
                 <li class="mr-12" >
@@ -27,7 +27,7 @@
             </div>
             <div class="hidden p-4 "
                  id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-
+                <NewPost />
             </div>
         </div>
     </div>
@@ -39,9 +39,10 @@
 <script>
 import UpdateProfile from "./UpdateProfile.vue";
 import {initTabs} from "flowbite";
+import NewPost from "./NewPost.vue";
 export default {
     name: "User.vue",
-    components: {UpdateProfile},
+    components: {NewPost, UpdateProfile},
 
     mounted() {
         initTabs()
