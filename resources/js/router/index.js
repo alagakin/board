@@ -1,8 +1,8 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import Index from "../components/Index.vue";
-import User from "../components/User/Profile/User.vue";
 import DetailItem from "../components/Board/DetailItem.vue";
 import DetailUser from "../components/User/DetailUser.vue";
+import Profile from "../components/User/Profile/Profile.vue";
 
 const routes = [
     {
@@ -13,7 +13,7 @@ const routes = [
     {
         path: '/user',
         name: 'user',
-        component: User
+        component: Profile
     },
     {
         path: '/items/:id/',
