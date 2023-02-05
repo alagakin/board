@@ -1,7 +1,5 @@
 <template>
-    <form action="" class="w-full rounded-lg">
-        <input type="text" placeholder="search" class="w-full rounded-xl p-3 focus:outline-none">
-    </form>
+    <Filter />
     <div class="container flex flex-row flex-wrap justify-between mt-7 ">
         <Item />
         <Item />
@@ -16,8 +14,9 @@
 
 <script>
 import Item from "./Board/Item.vue";
+import Filter from "./Board/Filter/Filter.vue";
 export default {
     name: "Board",
-    components: {Item}
+    components: {Item, Filter}
 }
 </script>
