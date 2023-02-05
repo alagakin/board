@@ -1,9 +1,7 @@
 <template>
-    <div class="container bg-white p-10 mt-10">
+    <div class="container bg-white pt-20 pb-12">
         <h2 class="text-center text-xl">Here you can update your profile
             info</h2>
-
-
         <form class="w-full max-w-lg mx-auto mt-12" id="update-profile"
               v-on:submit.prevent="update">
             <label class="flex justify-center mb-6 cursor-pointer"

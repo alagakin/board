@@ -1,14 +1,16 @@
 <template>
-    <Filter />
-    <div class="container flex flex-row flex-wrap justify-between mt-7 ">
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+    <div class="container mt-5">
+        <Filter />
+        <div class="container flex flex-row flex-wrap justify-between mt-7 ">
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+        </div>
     </div>
 </template>
 
