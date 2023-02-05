@@ -7,7 +7,7 @@
                     <button class="inline-block p-4 border-b-2 rounded-t-lg"
                             id="profile-tab" data-tabs-target="#profile"
                             type="button" role="tab" aria-controls="profile"
-                            aria-selected="false">Update Profile
+                            aria-selected="true">Update Profile
                     </button>
                 </li>
                 <li class="mr-12" >
@@ -16,6 +16,14 @@
                         id="dashboard-tab" data-tabs-target="#dashboard"
                         type="button" role="tab" aria-controls="dashboard"
                         aria-selected="false">New Post
+                    </button>
+                </li>
+                <li class="mr-12" >
+                    <button
+                        class="inline-block p-4 border-b-2 rounded-t-lg"
+                        id="my-posts-tab" data-tabs-target="#my-posts"
+                        type="button" role="tab" aria-controls="my-posts"
+                        aria-selected="false">My posts
                     </button>
                 </li>
             </ul>
@@ -29,6 +37,10 @@
                  id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                 <NewPost />
             </div>
+            <div class="hidden p-4 "
+                 id="my-posts" role="tabpanel" aria-labelledby="dashboard-tab">
+                <MyPosts />
+            </div>
         </div>
     </div>
 
@@ -40,9 +52,10 @@
 import UpdateProfile from "./UpdateProfile.vue";
 import {initTabs} from "flowbite";
 import NewPost from "./NewPost.vue";
+import MyPosts from "./MyPosts.vue";
 export default {
     name: "User.vue",
-    components: {NewPost, UpdateProfile},
+    components: {MyPosts, NewPost, UpdateProfile},
 
     mounted() {
         initTabs()
