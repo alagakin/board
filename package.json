@@ -16,6 +16,7 @@
     "dependencies": {
         "@vitejs/plugin-vue": "^4.0.0",
         "flowbite": "^1.6.2",
+        "tailwind-scrollbar-hide": "^1.1.7",
         "uuid": "^9.0.0",
         "vue": "^3.2.36",
         "vue-router": "^4.1.6"
